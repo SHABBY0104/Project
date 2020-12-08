@@ -84,6 +84,8 @@ QT_XFJE = normlize2(data['QT_XFJE'])
 IN_COUNT = normlize2(data['IN_COUNT'])
 OUT_COUNT = normlize2(data['OUT_COUNT'])
 
+
+
 df2.insert(0,column='SUM_XFCS', value=SUM_XFCS)
 df2.insert(0,column='SUM_XFJE', value=SUM_XFJE)
 df2.insert(0,column='CY_XFCS', value=CY_XFCS)
@@ -123,8 +125,12 @@ name = ['YW','SX','WY', 'ZH']
 for i in range(len(name1)):
     df2.insert(0,column=name[i], value=CJ[:,i])
 
+df2.insert(0, column='ZF_RATIO', value=data['ZF_RATIO'])
+df2.insert(0, column='ZF_RANK', value=data['ZF_RANK'])
+df2.insert(0, column='LABEL_NUM', value=data['LABEL'])
+
 # df2.insert(0,column=['YW','SX','WY', 'ZH'], value=CJ)
 
 print(df2)
 
-df2.to_csv('result2.csv')
+df2.to_csv('result3.csv')
